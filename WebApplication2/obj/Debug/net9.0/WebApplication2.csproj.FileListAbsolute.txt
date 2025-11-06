@@ -25,3 +25,4 @@ C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\WebApplication2.pdb
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\WebApplication2.genruntimeconfig.cache
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\ref\WebApplication2.dll
+C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\WebApplication2.sourcelink.json

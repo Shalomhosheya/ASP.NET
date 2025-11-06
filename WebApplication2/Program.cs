@@ -5,7 +5,12 @@ var app = builder.Build();
 
     app.Use(async (context, next) =>
     {
-       await context.Response.WriteAsync("Middle ware!");
+       await context.Response.WriteAsync("Middle ware! ");
+       await next.Invoke();
+    });
+    app.Use(async (context, next) =>
+    {
+       await context.Response.WriteAsync("Middle ware 2! ");
        await next.Invoke();
     });
     app.MapGet("/",async context =>
