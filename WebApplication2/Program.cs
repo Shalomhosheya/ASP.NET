@@ -23,17 +23,23 @@ var app = builder.Build();
        await context.Response.WriteAsync("Middle ware 2 Response! ");
     });*/
 
-    app.Use(async (context, next) =>
-    {
-       await context.Response.WriteAsync("Hello World! ");
-       await next.Invoke();
-    });
+    // ✅ Enable serving static files from wwwroot
+    app.UseStaticFiles();
 
-    
-   app.Map("/path1", path1);
-   app.Map("/path2", path2);
-   
+    // ✅ Default route — fallback
+    app.MapGet("/", async context =>
+    {
+        context.Response.ContentType = "text/html";
+        await context.Response.SendFileAsync("wwwroot/index.html");
+    });
+    app.Map("/path1", path1);
     app.Run();
+
+
+   /*app.Map("/path1", path1);
+   app.Map("/path2", path2);
+   */
+   
 
     static void path1(IApplicationBuilder app)
     {
@@ -43,11 +49,12 @@ var app = builder.Build();
             }
         );
     }
-    static void path2(IApplicationBuilder app)
+    
+    /*static void path2(IApplicationBuilder app)
     {
         app.Run(async context =>
             {
                 await context.Response.WriteAsync("Path2 is 2!");
             }
         );
-    }
+    }*/
