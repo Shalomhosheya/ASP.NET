@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -23,10 +25,8 @@ var app = builder.Build();
        await context.Response.WriteAsync("Middle ware 2 Response! ");
     });*/
 
-    // ✅ Enable serving static files from wwwroot
-    app.UseStaticFiles();
-
     // ✅ Default route — fallback
+    /*
     app.MapGet("/", async context =>
     {
         context.Response.ContentType = "text/html";
@@ -34,6 +34,7 @@ var app = builder.Build();
     });
     app.Map("/path1", path1);
     app.Run();
+    */
 
 
    /*app.Map("/path1", path1);
@@ -41,14 +42,14 @@ var app = builder.Build();
    */
    
 
-    static void path1(IApplicationBuilder app)
+    /*static void path1(IApplicationBuilder app)
     {
         app.Run(async context =>
             {
                 await context.Response.WriteAsync("Path1 is 1!");
             }
         );
-    }
+    }*/
     
     /*static void path2(IApplicationBuilder app)
     {
@@ -58,3 +59,9 @@ var app = builder.Build();
             }
         );
     }*/
+app.UseStaticFiles(new StaticFileOptions()
+{
+   FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "staticFiles")),
+   RequestPath = new PathString("/staticFiles")
+});
+app.Run();
