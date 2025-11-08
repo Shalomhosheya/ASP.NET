@@ -64,4 +64,10 @@ app.UseStaticFiles(new StaticFileOptions()
    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "staticFiles")),
    RequestPath = new PathString("/staticFiles")
 });
+
+app.UseDirectoryBrowser(new DirectoryBrowserOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","images")),
+    RequestPath = new PathString("/images")
+});
 app.Run();
