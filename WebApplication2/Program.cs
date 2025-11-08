@@ -71,7 +71,11 @@ app.UseDirectoryBrowser(new DirectoryBrowserOptions()
     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","images")),
     RequestPath = new PathString("/images")
 });*/
+    var files = new DefaultFilesOptions();
+    files.DefaultFileNames.Clear();
+    files.DefaultFileNames.Add("hworld.html");
+    files.DefaultFileNames.Add("index.html");
 
-app.UseDefaultFiles();
+app.UseDefaultFiles(files);
 app.UseStaticFiles();
 app.Run();

@@ -28,3 +28,4 @@ C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\WebApplication2.sourcelink.json
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\bin\Debug\net9.0\WebApplication2.staticwebassets.runtime.json
 C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\2yanz1hut2-faisvdz7k2.gz
+C:\Users\shalom hosheya\RiderProjects\WebApplication2\WebApplication2\obj\Debug\net9.0\compressed\o0mck3gxfb-jjkrtadkbh.gz
